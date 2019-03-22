@@ -1,0 +1,293 @@
+/*
+Theme Name: G1 News
+Author: Fabrizio Feitosa
+Author URI: http://fabriziofeitosa.me
+Description: G1 News - 2019
+Version: 1.0
+Tags: brazil, portuguese, news
+Text Domain: g1-news-domain
+Domain Path: /languages
+*/
+
+@charset "UTF-8";
+
+/* #######################################
+        VARIÁVEIS
+####################################### */
+
+$vermelho: #C4170C;
+$vermelhoEscuro: #A7140A;
+$padrao: #333;
+
+/* #######################################
+        BÁSICO
+####################################### */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+html {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    min-height: 100%;
+    color: $padrao;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+    &.tudo {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+/* #######################################
+        FUNÇÕES
+####################################### */
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+@mixin w-sm() {
+    @media screen and (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin w-md() {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin w-lg() {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin w-xl() {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+/* #######################################
+    BARRA SUPERIOR
+####################################### */
+
+$altura-desktop: 74px;
+
+.top-bar-area {
+    height: $altura-desktop;
+}
+.top-bar {
+    position: relative;
+    background-color: $vermelho;
+    color: #fff;
+
+    .area-principal {
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+        height: $altura-desktop;
+    }
+    .menu,
+    .logotipo,
+    .area-busca {
+        width: 33.33%;
+    }
+
+    .menu {
+        position: relative;
+        height: 100%;
+        .btn-menu {
+            text-transform: uppercase;
+            .nome {
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .logotipo {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .area-busca {
+        .caixa {
+            position: relative;
+            button {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+                border: none;
+                color: #fff;
+                height: 33px;
+                width: 33px;
+                transition: all .2s;
+            }
+            input {
+                background-color: $vermelhoEscuro;
+                border-radius: 4px;
+                border: none;
+                color: #fff;
+                width: 164px;
+                height: 33px;
+                font-size: 14px;
+                padding: 0 5px 0 30px;
+                transition: all .2s;
+
+                &:focus {
+                    background-color: #fff;
+                    width: 220px;
+                    color: #333;
+                    & + button {
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* #######################################
+    MENU PRINCIPAL
+####################################### */
+
+ul#menu-principal-d {
+    position: absolute;
+    display: none;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,.6);
+    list-style: none;
+    color: $padrao;
+    font-size: 14px;
+    left: 0px;
+    top: 90%;
+    height: 433px;
+
+    &::before {
+        position: absolute;
+        top: -5px;
+        left: 5px;
+        display: block;
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        transform: rotate(45deg);
+    }
+
+    li.item:not(.titulo) {
+        font-size: 14px;
+        line-height: 17px;
+        padding: 5px 5px 6px 20px;
+        text-align: left;
+        text-transform: lowercase;
+        width: 176px;
+        font-weight: bold;
+        border-left: 4px solid transparent;
+        cursor: default;
+
+        &:hover {
+            background-color: #F5F5F5;
+            border-left: 4px solid $vermelho;
+        }
+
+        &.pai {
+            &:hover {
+                ul.sub-menu {
+                    display: block !important;
+                }
+            }
+        }
+
+        &.link {
+            position: relative;
+            a {
+                width: 100%;
+                display: inline-block;
+            }
+        }
+    }
+
+    li.titulo {
+        text-transform: uppercase;
+        font-size: 16px;
+        padding: 5px 5px 6px 20px;
+    }
+
+    ul.sub-menu {
+        display: none;
+        position: absolute;
+        top: 0px;
+        left: 176px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        border-left: 1px solid #ddd;
+        height: 433px;
+        padding: 8px 0;
+
+        li.item {
+            color: #666;
+            font-weight: normal;
+        }
+    }
+}
+
+.top-bar {
+    .menu:hover {
+        #menu-principal-d {
+            display: block;
+        }
+    }
+}
