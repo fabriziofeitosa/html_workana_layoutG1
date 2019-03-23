@@ -19,7 +19,7 @@
         <div class="area-principal d-flex justify-content-between align-items-center">
           <!-- Menu principal -->
           <div class="menu d-flex align-items-center">
-            <div class="btn-menu">
+            <div class="btn-menu" id="btn-menu-principal">
               <span class="icone">
                 <i class="fas fa-bars"></i>
               </span>
@@ -101,18 +101,63 @@
     
           <!-- Busca -->
           <div class="area-busca d-flex justify-content-end">
-            <div class="caixa">
+            <div class="caixa d-none d-md-block">
               <form action="#" class="busca-principal">
-                <input type="text">
+                <input type="text" placeholder="BUSCA">
                 <button type="submit">
                   <i class="fas fa-search"></i>
                 </button>
               </form>
             </div>
+            <!-- Botão mobile-->
+            <div class="d-block d-md-none">
+              <div id="btn-busca-top">
+                <i class="fas fa-search"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
+    </div>
+
+    <!-- ADS -->
+    <div class="ads tipo-01 d-none d-md-block">
+      <a href="#link">
+        <img src="assets/images/ads-tipo01.jpg" alt="Propaganda">
+        <div class="txt">Anuncio aqui</div>
+      </a>
+    </div>
+    <div class="ads tipo-02 d-block d-md-none">
+      <a href="#link">
+        <img src="assets/images/ads-tipo02.jpg" alt="Propaganda">
+        <div class="txt">Anuncio aqui</div>
+      </a>
+    </div>
+
+    <!-- Destaques -->
+    <div class="area-destaques">
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+        <div class="lado">
+          <div class="destaque grande com-foto d-flex flex-column justify-content-end align-items-end" style="--img-fundo:url('../assets/images/noticia01.jpg');">
+            <div class="titulo">Sed lacinia suscipit est, nec sodales diam suscipit non. In.</div>
+            <div class="sobre">Curabitur tincidunt ligula sit amet ultrices viverra. In vel quam ex. Vestibulum a euismod purus.</div>
+            <a href="#link-da-materia" class="tudo"></a>
+          </div>
+        </div>
+        <div class="lado">
+          <div class="destaque pequeno com-foto d-flex flex-column justify-content-end align-items-end" style="--img-fundo:url('../assets/images/noticia02.jpg');">
+            <div class="titulo">Aenean sit amet rhoncus ipsum, vitae malesuada.</div>
+            <div class="sobre">Morbi semper feugiat velit, eu facilisis felis gravida blandit. Phasellus elementum, felis sed convallis feugiat. Ffelis sed convallis feugiat.</div>
+            <a href="#link-da-materia" class="tudo"></a>
+          </div>
+          <div class="destaque pequeno com-foto d-flex flex-column justify-content-end align-items-end" style="--img-fundo:url('../assets/images/noticia03.jpg');">
+            <div class="titulo">Aenean sit amet rhoncus ipsum, vitae malesuada.</div>
+            <div class="sobre">Morbi semper feugiat velit, eu facilisis felis gravida blandit. Phasellus elementum, felis sed convallis feugiat.</div>
+            <a href="#link-da-materia" class="tudo"></a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

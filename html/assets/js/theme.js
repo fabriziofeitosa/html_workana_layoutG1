@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
     menuPrincipal.css('width','352px');
     console.log('hover!');
   }, function(){
-    menuPrincipal.css('width','auto');
+    menuPrincipal.css('width','176px');
     console.log('saiu hover!');
   });
 
