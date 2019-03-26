@@ -33,8 +33,29 @@ jQuery(document).ready(function($) {
     $(".menu-submenu").removeClass('show');
   });
 
-  // if (screen.width < 640 || screen.height < 480) {
-  // } else {
-  // }
+  if (screen.width < 640 || screen.height < 480) {
+
+    // mobile
+
+  } else {
+  
+    // desktop
+
+    var offset = $('#menuPrincipalTop').offset().top;
+    var menuPrincipalTop = $('#menuPrincipalTop');
+    $(document).on('scroll', function () {
+      fixedTopMenu();
+    });
+    fixedTopMenu();
+    function fixedTopMenu() {
+      if ((offset + 74) <= $(window).scrollTop()) {
+        menuPrincipalTop.addClass('fixed');
+      } else {
+          menuPrincipalTop.removeClass('fixed');
+      }
+    }
+  
+  }
+
 
 });
