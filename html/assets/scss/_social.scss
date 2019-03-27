@@ -9,7 +9,7 @@
 .share--vertical {
   position: absolute;
   left: -125px;
-  top: 95px;
+  top: 0px;
     
   [class^="icon-"]:before, [class*=" icon-"]:before {
     font-size: 32px; 
@@ -37,8 +37,8 @@
   &.facebook {
     background: #069;
   }
-  &.google-plus {
-    background: #cb5a45;
+  &.whatsapp {
+    background: #45cb67;
   }
   &.twitter {
     background: #4aade8;

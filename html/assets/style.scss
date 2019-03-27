@@ -20,6 +20,8 @@ $vermelhoEscuro: #A7140A;
 $padrao: #333;
 $secundaria: #555;
 
+$larguraMax: 1360px;
+
 /* #######################################
         BÁSICO
 ####################################### */
@@ -79,7 +81,7 @@ a {
 }
 
 .container {
-    max-width: 1360px;
+    max-width: $larguraMax;
 }
 
 
@@ -147,7 +149,7 @@ $altura-desktop: 74px;
 
     .area-principal {
         width: 100%;
-        max-width: 1360px;
+        max-width: $larguraMax;
         margin: 0 auto;
         height: $altura-desktop;
     }
@@ -526,7 +528,7 @@ ul.menu-principal-desktop {
 ####################################### */
 
 .area-destaques {
-    max-width: 1360px;
+    max-width: $larguraMax;
     margin: 0 auto 40px;
     .lado {
         width: 100%;
@@ -608,6 +610,29 @@ ul.menu-principal-desktop {
             letter-spacing: -.8px;
             line-height: 24px;
             margin-bottom: 42px;
+        }
+    }
+}
+
+/* #######################################
+    FEED PRINCIPAL
+####################################### */
+
+.feed-principal {
+    margin: 0 auto;
+    margin-bottom: 80px;
+    max-width: $larguraMax;
+    padding: 0 16px;
+    > .conteudo {
+        width: 100%;
+        @include w-md() {
+            max-width: 66.5%;
+        }
+    }
+    > .lateral {
+        width: 100%;
+        @include w-md() {
+            max-width: 30%;
         }
     }
 }
@@ -939,6 +964,164 @@ footer {
                 display: block;
                 font-size: .75rem;
                 line-height: 1rem;
+            }
+        }
+    }
+}
+
+/* #######################################
+    CARD DE CONTEUDO LATERAL
+####################################### */
+
+.card-content {
+    border-radius: 4px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    background-color: #fff;
+
+    .header {
+        border-bottom: 1px solid rgb(238, 238, 238);
+        padding: 1rem 1.5rem;
+        h2 {
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: -0.4px;
+            color: rgb(51, 51, 51);
+            line-height: 20px;
+            margin: 0;
+        }
+    }
+
+    ul.lista-de-itens {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        padding: 0px 1.5rem;
+        > li {
+            border-top: 0px;
+            padding: 1.5rem 0px;
+            position: relative;
+
+            &:not(:first-child) {
+                border-top: 1px solid rgb(238, 238, 238);
+            }
+
+            .titulo {
+                font-size: 15px;
+                font-weight: 600;
+                letter-spacing: -0.75px;
+                line-height: 20px;
+                color: rgb(51, 51, 51);
+                margin-bottom: 0.5rem;
+            }
+            .sobre {
+                font-size: 1rem;
+                line-height: 20px;
+                letter-spacing: -1px;
+                font-weight: 700;
+                color: $vermelho;
+            }
+            .imagem {
+                img {
+                    margin: 0px 0px 0px 16px;
+                }
+            }
+        }
+    }
+
+    .footer {
+        border-top: 1px solid rgb(238, 238, 238);
+        padding: 16px 24px;
+        .link {
+            font-size: 14px;
+            line-height: 1.14;
+            letter-spacing: -0.7px;
+            font-weight: 700;
+            cursor: pointer;
+            color: $vermelho;
+            span {
+                margin-left: 6px;
+                fill: currentColor;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+/* #######################################
+    SOCIAL
+####################################### */
+
+.cad-news {
+    background-color: lighten($vermelho, 10%);
+    color: #fff;
+    padding: 40px 0;
+    .area-conteudo {
+        max-width: $larguraMax;
+        margin: 0 auto;
+        height: 100%;
+
+        .formulario {
+            width: 100%;
+            @include w-md() {
+                width: 65%;
+            }
+            .mensagem {
+                letter-spacing: -1px;
+                text-align: center;
+                font-weight: 300;
+                margin-bottom: 10px;
+                
+                font-size: 20px;
+                padding: 0 20px;
+                @include w-md() {
+                    font-size: 24px;
+                    padding-right: 20px;
+                }
+
+                strong {
+                    font-weight: bold;
+                }
+            }
+
+            form {
+                width: 90%;
+                margin: 0 auto;
+                margin-bottom: 30px;
+                @include w-md() {
+                    width: 60%;
+                    margin-bottom: 0px;
+                }
+            }
+
+            button.btn {
+                background-color: #ff3629;
+                color: #fff;
+                border: 1px solid #fff;
+            }
+        }
+        .chat {
+            padding: 20px;
+            background-color: #fff;
+            color: $padrao;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+            
+            width: 90%;
+            margin: 0 auto;
+            @include w-md() {
+                width: 30%;
+            }
+            img {
+                max-width: 100%;
+            }
+
+            .texto {
+                font-weight: bold;
+                line-height: 1;
+                margin-bottom: 10px;
+                display: block;
             }
         }
     }
