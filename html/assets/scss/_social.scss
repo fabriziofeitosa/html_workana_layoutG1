@@ -1,0 +1,47 @@
+/* First, I need to undo my library's stylesheet icon rules so FontAwsome displays in this pen */
+[class^="icon-"]:before, [class*=" icon-"]:before { 
+  color: white;
+  display: block;
+  font-family: FontAwesome;  
+  margin-top: 10px;
+}
+
+.share--vertical {
+  position: absolute;
+  left: -125px;
+  top: 95px;
+    
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-size: 32px; 
+    padding-top: 40px;
+    margin-bottom: 18px;
+  }
+  
+  .share--link {
+    display: block;
+    font-size: 16px;
+    height: 95px;
+    margin-bottom: -9px; 
+    width: 95px;
+  }
+}
+
+.share--link {
+  color: #fff !important;
+  height: 65px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 65px;
+  
+  &.facebook {
+    background: #069;
+  }
+  &.google-plus {
+    background: #cb5a45;
+  }
+  &.twitter {
+    background: #4aade8;
+  }
+  
+}
