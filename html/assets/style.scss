@@ -523,6 +523,13 @@ ul.menu-principal-desktop {
     }
 }
 
+.pagina-interna {
+    .ads {
+        max-width: 888px;
+        margin: 40px auto;
+    }
+}
+
 /* #######################################
     NOTÍCIAS DESTAQUE
 ####################################### */
@@ -1123,6 +1130,49 @@ footer {
                 margin-bottom: 10px;
                 display: block;
             }
+        }
+    }
+}
+
+.pagina-interna {
+    .cad-news {
+        max-width: 888px;
+        margin: 0 auto;
+        border-radius: 4px;
+        h2.mensagem {
+            max-width: 550px;
+        }
+    }
+}
+
+/* #######################################
+    POSTAGENS RELACIONADAS
+####################################### */
+
+.posts-relacionados {
+    background-color: #f3f3f3;
+    padding: 0 0 30px;
+    margin-top: 40px;
+    
+    .area-conteudo {
+        max-width: 888px;
+        margin: 0 auto;
+        border-top: 2px solid #000;
+        padding-top: 20px;
+
+        .titulo-de-area {
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            font-size: 24px;
+            text-align: center;
+            @include w-md() {
+                text-align: left;
+            }
+        }
+        .lista-postagens {
+            margin-top: 30px;
+            padding: 0 15px;
         }
     }
 }
